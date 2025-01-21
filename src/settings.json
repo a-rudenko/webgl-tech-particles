@@ -1,0 +1,38 @@
+{
+  "effectController": {
+    "enableRotation": false,
+    "rotationSpeed": 0.1,
+    "showLines": true,
+    "minDistance": 150,
+    "maxConnections": 20,
+    "particlesCount": 500,
+    "particleVelocity": 0.1,
+    "colorEnabled": [
+      true,
+      true,
+      true
+    ],
+    "availableColors": [
+      "#b02727",
+      "#454545",
+      "#15154c"
+    ],
+    "enableCameraControls": true
+  },
+  "cameraSettings": {
+    "positionZ": 1750,
+    "farPlane": 4000,
+    "nearPlane": 1,
+    "fieldOfView": 45
+  },
+  "orbitControls": {
+    "minDistance": 1000,
+    "maxDistance": 3000
+  },
+  "sceneSettings": {
+    "halfRadius": 400,
+    "iconSize": 20,
+    "particlesCount": 500,
+    "maxParticlesCount": 1000
+  }
+}
