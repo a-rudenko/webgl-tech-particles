@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -11,6 +12,13 @@ module.exports = {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
         clean: true,
+    },
+    optimization: {
+        minimize: true,
+        minimizer: [new TerserPlugin()],
+    },
+    performance: {
+        hints: false,
     },
     module: {
         rules: [
@@ -52,8 +60,8 @@ module.exports = {
         }),
         new CopyWebpackPlugin({
             patterns: [
-                { from: 'settings.json', to: 'settings.json' },
-                { from: 'src/assets/icons', to: 'assets/icons' },
+                {from: 'settings.json', to: 'settings.json'},
+                {from: 'src/assets/icons', to: 'assets/icons'},
             ],
         }),
     ],
@@ -65,5 +73,5 @@ module.exports = {
         compress: true,
         port: 9000,
     },
-    mode: 'development',
+    mode: 'production',
 };
