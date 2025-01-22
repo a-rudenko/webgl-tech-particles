@@ -1,8 +1,8 @@
 import * as THREE from 'three';
 
-export class ParticlesManager {
-    constructor(sceneManager, settings, textures) {
-        this.sceneManager = sceneManager;
+export class Particles {
+    constructor(scene, settings, textures) {
+        this.scene = scene;
         this.settings = settings;
         this.textures = textures;
         this.particlesData = [];
@@ -19,12 +19,12 @@ export class ParticlesManager {
             blending: THREE.AdditiveBlending,
             transparent: true,
         }));
-        this.sceneManager.group.add(this.linesMesh);
+        this.scene.group.add(this.linesMesh);
     }
 
     updateParticles() {
         while (this.sprites.length > this.settings.sceneSettings.particlesCount) {
-            this.sceneManager.group.remove(this.sprites.pop());
+            this.scene.group.remove(this.sprites.pop());
         }
 
         for (let i = this.sprites.length; i < this.settings.sceneSettings.particlesCount; i++) {
@@ -43,7 +43,7 @@ export class ParticlesManager {
                 radius * Math.cos(phi)
             );
 
-            this.sceneManager.group.add(sprite);
+            this.scene.group.add(sprite);
             this.sprites.push(sprite);
             this.particlesData.push({
                 velocity: new THREE.Vector3(this.getVelocity(), this.getVelocity(), this.getVelocity()),
@@ -147,7 +147,7 @@ export class ParticlesManager {
         this.linesMesh.geometry.attributes.color.needsUpdate = true;
 
         if (this.settings.effectController.enableRotation) {
-            this.sceneManager.group.rotation.y += this.settings.effectController.rotationSpeed / 100;
+            this.scene.group.rotation.y += this.settings.effectController.rotationSpeed / 100;
         }
     }
 }

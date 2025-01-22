@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-export class SceneManager {
+export class Scene {
     constructor(settings) {
         this.settings = settings;
         this.scene = new THREE.Scene();

@@ -1,8 +1,8 @@
-import { SceneManager } from '../sceneManager.js';
-import { ParticlesManager } from '../particlesManager.js';
+import { Scene } from '../scene.js';
+import { Particles } from '../particles.js';
 import { Renderer } from '../renderer.js';
-import { GUIManager } from '../guiManager.js';
-import { loadTextures } from '../textureLoader.js';
+import { Gui } from '../gui.js';
+import { loadTextures } from '../texture.js';
 import { loadSettings, exportSettings } from '../settings.js';
 import '../assets/css/main.css';
 
@@ -10,15 +10,15 @@ async function init() {
     const settings = await loadSettings();
     const textures = loadTextures();
 
-    const sceneManager = new SceneManager(settings);
-    const particlesManager = new ParticlesManager(sceneManager, settings, textures);
-    const renderer = new Renderer(sceneManager, particlesManager);
-    const guiManager = new GUIManager(sceneManager, particlesManager, settings, exportSettings);
+    const scene = new Scene(settings);
+    const particles = new Particles(scene, settings, textures);
+    const renderer = new Renderer(scene, particles);
+    const gui = new Gui(scene, particles, settings, exportSettings);
 
-    sceneManager.init();
-    particlesManager.init();
+    scene.init();
+    particles.init();
     renderer.init();
-    guiManager.init();
+    gui.init();
 }
 
 init();

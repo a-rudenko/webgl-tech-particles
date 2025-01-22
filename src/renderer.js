@@ -1,9 +1,9 @@
 import * as THREE from 'three';
 
 export class Renderer {
-    constructor(sceneManager, particlesManager) {
-        this.sceneManager = sceneManager;
-        this.particlesManager = particlesManager;
+    constructor(scene, particles) {
+        this.scene = scene;
+        this.particles = particles;
         this.renderer = new THREE.WebGLRenderer({ antialias: true });
     }
 
@@ -15,7 +15,7 @@ export class Renderer {
     }
 
     animate() {
-        this.particlesManager.animate();
-        this.renderer.render(this.sceneManager.scene, this.sceneManager.camera);
+        this.particles.animate();
+        this.renderer.render(this.scene.scene, this.scene.camera);
     }
 }
