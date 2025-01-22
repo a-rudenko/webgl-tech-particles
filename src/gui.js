@@ -10,6 +10,14 @@ export class Gui {
     }
 
     init() {
+        this.addGeneralControls();
+        this.addMotionControls();
+        this.addColorControls();
+        this.addCameraControls();
+        this.addExportButton();
+    }
+
+    addGeneralControls() {
         this.gui.add(this.settings.effectController, 'showLines').name('Show Lines').onChange((value) => {
             this.particles.linesMesh.visible = value;
         });
@@ -22,12 +30,16 @@ export class Gui {
         this.gui.add(this.settings.effectController, 'particleVelocity', 0, 2, 0.01).name('Particle Speed').onChange(() => {
             this.particles.updateParticleVelocities();
         });
+    }
 
+    addMotionControls() {
         const motionFolder = this.gui.addFolder('Motion Settings');
         motionFolder.add(this.settings.effectController, 'enableRotation').name('Rotation');
         motionFolder.add(this.settings.effectController, 'rotationSpeed', 0, 1, 0.01).name('Rotation Speed');
         motionFolder.open();
+    }
 
+    addColorControls() {
         const colorFolder = this.gui.addFolder('Color Settings');
         this.settings.effectController.colorEnabled.forEach((enabled, index) => {
             colorFolder.add(this.settings.effectController.colorEnabled, index).name(`Enable Color ${index + 1}`).onChange(() => {
@@ -40,10 +52,15 @@ export class Gui {
             });
         });
         colorFolder.open();
+    }
 
+    addCameraControls() {
         this.gui.add(this.settings.effectController, 'enableCameraControls').name('Camera Controls').onChange((value) => {
             this.scene.controls.enabled = value;
         });
+    }
+
+    addExportButton() {
         this.gui.add({ exportSettings: () => this.exportSettings(this.settings) }, 'exportSettings').name('Export Settings');
     }
 }
