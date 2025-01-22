@@ -1,5 +1,5 @@
 export async function loadSettings() {
-    const response = await fetch('settings.json');
+    const response = await fetch('./settings.json');
     if (!response.ok) {
         throw new Error('Failed to load settings.json');
     }
