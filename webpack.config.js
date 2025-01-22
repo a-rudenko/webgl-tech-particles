@@ -69,6 +69,9 @@ module.exports = {
         static: {
             directory: path.join(__dirname, 'dist'),
         },
+        client: {
+            logging: 'error',
+        },
         open: '/demo.html',
         compress: true,
         port: 9000,
