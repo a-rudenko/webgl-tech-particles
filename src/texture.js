@@ -29,7 +29,7 @@ const DEFAULT_ICONS = [
 const DEFAULT_ICON_FOLDER = './dist/assets/icons';
 
 const loadTexture = (textureLoader, path) => {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         textureLoader.load(
             path,
             (texture) => {
@@ -37,31 +37,35 @@ const loadTexture = (textureLoader, path) => {
                 resolve(texture);
             },
             undefined,
-            (error) => reject(error)
+            () => {
+                resolve(null);
+            }
         );
     });
 };
 
 const loadDefaultTextures = async (textureLoader) => {
-    return Promise.all(
+    const textures = await Promise.all(
         DEFAULT_ICONS.map((fileName) =>
             loadTexture(textureLoader, `${DEFAULT_ICON_FOLDER}/${fileName}`)
         )
     );
+
+    return textures.filter(texture => texture !== null);
 };
 
 const loadCustomTextures = async (textureLoader, iconFolderPath) => {
     try {
         const response = await fetch(`${iconFolderPath}/iconList.json`);
         const files = await response.json();
-
-        return Promise.all(
+        const textures = await Promise.all(
             files.map((fileName) =>
                 loadTexture(textureLoader, `${iconFolderPath}/${fileName}`)
             )
         );
+
+        return textures.filter(texture => texture !== null);
     } catch (error) {
-        console.error('Error loading custom icons:', error);
         return [];
     }
 };
