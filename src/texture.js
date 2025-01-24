@@ -1,32 +1,76 @@
 import * as THREE from 'three';
 
-export const loadTextures = () => {
-    const textureLoader = new THREE.TextureLoader();
-    const texturePaths = [
-        './dist/assets/icons/php.webp',
-        './dist/assets/icons/js.webp',
-        './dist/assets/icons/ts.webp',
-        './dist/assets/icons/python.webp',
-        './dist/assets/icons/react.webp',
-        './dist/assets/icons/angular.webp',
-        './dist/assets/icons/ruby.webp',
-        './dist/assets/icons/java.webp',
-        './dist/assets/icons/c.webp',
-        './dist/assets/icons/c-sharp.webp',
-        './dist/assets/icons/rust.webp',
-        './dist/assets/icons/kotlin.webp',
-        './dist/assets/icons/dart.webp',
-        './dist/assets/icons/flutter.webp',
-        './dist/assets/icons/scala.webp',
-        './dist/assets/icons/docker.webp',
-        './dist/assets/icons/kubernetes.webp',
-        './dist/assets/icons/github.webp',
-        './dist/assets/icons/vue.webp',
-        './dist/assets/icons/html.webp',
-        './dist/assets/icons/aws.webp',
-        './dist/assets/icons/graph-ql.webp',
-        './dist/assets/icons/open-ai.webp',
-    ];
+const DEFAULT_ICONS = [
+    'php.webp',
+    'js.webp',
+    'ts.webp',
+    'python.webp',
+    'react.webp',
+    'angular.webp',
+    'ruby.webp',
+    'java.webp',
+    'c.webp',
+    'c-sharp.webp',
+    'rust.webp',
+    'kotlin.webp',
+    'dart.webp',
+    'flutter.webp',
+    'scala.webp',
+    'docker.webp',
+    'kubernetes.webp',
+    'github.webp',
+    'vue.webp',
+    'html.webp',
+    'aws.webp',
+    'graph-ql.webp',
+    'open-ai.webp',
+];
 
-    return texturePaths.map(path => textureLoader.load(path));
+const DEFAULT_ICON_FOLDER = './dist/assets/icons';
+
+const loadTexture = (textureLoader, path) => {
+    return new Promise((resolve, reject) => {
+        textureLoader.load(
+            path,
+            (texture) => {
+                texture.needsUpdate = true;
+                resolve(texture);
+            },
+            undefined,
+            (error) => reject(error)
+        );
+    });
+};
+
+const loadDefaultTextures = async (textureLoader) => {
+    return Promise.all(
+        DEFAULT_ICONS.map((fileName) =>
+            loadTexture(textureLoader, `${DEFAULT_ICON_FOLDER}/${fileName}`)
+        )
+    );
+};
+
+const loadCustomTextures = async (textureLoader, iconFolderPath) => {
+    try {
+        const response = await fetch(`${iconFolderPath}/iconList.json`);
+        const files = await response.json();
+
+        return Promise.all(
+            files.map((fileName) =>
+                loadTexture(textureLoader, `${iconFolderPath}/${fileName}`)
+            )
+        );
+    } catch (error) {
+        console.error('Error loading custom icons:', error);
+        return [];
+    }
+};
+
+export const loadTextures = async (iconFolderPath) => {
+    const textureLoader = new THREE.TextureLoader();
+    if (!iconFolderPath) {
+        return loadDefaultTextures(textureLoader);
+    }
+
+    return loadCustomTextures(textureLoader, iconFolderPath);
 };
