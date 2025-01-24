@@ -2,9 +2,13 @@
   "name": "webgl-tech-particles",
   "version": "0.0.1",
   "description": "Interactive 3D particle system with technology icons using WebGL",
+  "main": "dist/webgl-tech-particles.js",
+  "module": "dist/webgl-tech-particles.js",
+  "files": ["dist"],
   "scripts": {
-    "start": "webpack serve && open http://localhost:9000/demo.html",
-    "build": "webpack --mode production"
+    "start": "webpack serve",
+    "build": "webpack --mode production",
+    "prepare": "npm run build"
   },
   "keywords": [
     "WebGL",

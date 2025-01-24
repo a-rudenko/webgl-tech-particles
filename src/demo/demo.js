@@ -6,13 +6,13 @@ import { loadTextures } from '../texture.js';
 import { loadSettings, exportSettings } from '../settings.js';
 import '../assets/css/main.css';
 
-async function init() {
+export async function initWebGLTechParticles(containerId) {
     const settings = await loadSettings();
     const textures = loadTextures();
 
-    const scene = new Scene(settings);
+    const scene = new Scene(settings, containerId);
     const particles = new Particles(scene, settings, textures);
-    const renderer = new Renderer(scene, particles);
+    const renderer = new Renderer(scene, particles, containerId);
     const gui = new Gui(scene, particles, settings, exportSettings);
 
     scene.init();
@@ -20,5 +20,3 @@ async function init() {
     renderer.init();
     gui.init();
 }
-
-init();

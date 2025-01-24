@@ -2,8 +2,9 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 export class Scene {
-    constructor(settings) {
+    constructor(settings, containerId) {
         this.settings = settings;
+        this.containerId = containerId;
         this.scene = new THREE.Scene();
         this.camera = new THREE.PerspectiveCamera(
             settings.cameraSettings.fieldOfView,
@@ -18,7 +19,7 @@ export class Scene {
     }
 
     init() {
-        this.controls = new OrbitControls(this.camera, document.getElementById('container'));
+        this.controls = new OrbitControls(this.camera, document.getElementById(this.containerId));
         this.controls.minDistance = this.settings.orbitControls.minDistance;
         this.controls.maxDistance = this.settings.orbitControls.maxDistance;
         this.controls.enabled = this.settings.effectController.enableCameraControls;
