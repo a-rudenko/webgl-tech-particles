@@ -4,11 +4,39 @@ Interactive 3D particle system with technology icons using WebGL and Three.js.
 
 This project is an interactive 3D visualization of technology icons (e.g., JavaScript, Python, React, Docker, etc.) implemented with WebGL and Three.js. Particles representing different technologies move dynamically in a 3D space, connecting with each other based on customizable parameters.
 
+<h2>Usage</h2>
+
+```js
+import { initWebGLTechParticles } from './dist/webgl-tech-particles.js';
+
+initWebGLTechParticles('tech-particles');
+```
+
+If you want to use a custom icon set, you need to specify the path to the icon folder in `initWebGLTechParticles`. Also in the icon folder you need to create a file `iconList.json` and specify which icons to load.
+
+```js
+import { initWebGLTechParticles } from './dist/webgl-tech-particles.js';
+
+initWebGLTechParticles('tech-particles', 'assets/icons');
+```
+
+Example of `iconList.json`:
+
+```
+[
+    "vue.webp",
+    "react.webp",
+    "dart.webp",
+    "rust.webp",
+    "aws.webp"
+]
+```
+
+<i>For correct operation, it is better to upload small icons in png and webp formats.</i>
+
 <h2>Settings</h2>
 
 Example with basic <a href="https://github.com/a-rudenko/webgl-tech-particles/blob/main/settings.json" target="_blank">settings</a>.
-
-Also, you can export the settings of the panel with the settings in the demo version. Set the settings and export them for use in the application.
 
 Below is a description of the settings.
 
