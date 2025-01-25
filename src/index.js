@@ -1,12 +1,12 @@
-import { Scene } from './scene.js';
-import { Particles } from './particles.js';
-import { Renderer } from './renderer.js';
-import { loadTextures } from './texture.js';
-import { loadSettings } from './settings.js';
+import {Scene} from './scene.js';
+import {Particles} from './particles.js';
+import {Renderer} from './renderer.js';
+import {loadTextures} from './texture.js';
+import {loadSettings} from './settings.js';
 import './assets/css/main.css';
 
-export async function initWebGLTechParticles(containerId, iconFolderPath) {
-    const settings = await loadSettings();
+export async function initWebGLTechParticles(containerId, iconFolderPath, customSettingsPath) {
+    const settings = await loadSettings(customSettingsPath);
     const textures = await loadTextures(iconFolderPath);
     const scene = new Scene(settings, containerId);
     const particles = new Particles(scene, settings, textures);

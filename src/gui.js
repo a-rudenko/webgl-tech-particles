@@ -18,8 +18,8 @@ export class Gui {
     }
 
     addGeneralControls() {
-        this.gui.add(this.settings.effectController, 'showLines').name('Show Lines').onChange((value) => {
-            this.particles.linesMesh.visible = value;
+        this.gui.add(this.settings.effectController, 'showLines').name('Show Lines').onChange(() => {
+            this.particles.updateLinesVisibility();
         });
         this.gui.add(this.settings.effectController, 'minDistance', 10, 300).name('Min Distance');
         this.gui.add(this.settings.effectController, 'maxConnections', 0, 30, 1).name('Max Connections');

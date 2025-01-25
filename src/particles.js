@@ -20,6 +20,13 @@ export class Particles {
             transparent: true,
         }));
         this.scene.group.add(this.linesMesh);
+        this.updateLinesVisibility();
+    }
+
+    updateLinesVisibility() {
+        if (this.linesMesh) {
+            this.linesMesh.visible = this.settings.effectController.showLines;
+        }
     }
 
     updateParticles() {
