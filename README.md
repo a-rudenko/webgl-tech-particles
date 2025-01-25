@@ -49,7 +49,6 @@ Below is a description of the settings.
 | `showLines`             | `true`                             | Show/hide meshes between particles (icons)                                                                                  |
 | `minDistance`           | `150`                              | Minimum distance to create meshes connecting particles                                                                      |
 | `maxConnections`        | `20`                               | Maximum number of connections                                                                                               |
-| `particlesCount`        | `500`                              | Base number of particles                                                                                                    |
 | `particleVelocity`      | `0.1`                              | Velocity of particles                                                                                                       |
 | `colorEnabled []`       | `[true, true, true]`               | The sphere can have 3 colors for the meshes connecting the particles, this setting allows you to turn on/off certain colors |
 | `availableColors []`    | `['#b02727', '#454545','#15154c']` | Available colors for meshes                                                                                                 |

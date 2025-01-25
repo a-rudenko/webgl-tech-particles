@@ -5,7 +5,6 @@
     "showLines": true,
     "minDistance": 150,
     "maxConnections": 20,
-    "particlesCount": 500,
     "particleVelocity": 0.1,
     "colorEnabled": [
       true,

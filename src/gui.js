@@ -23,8 +23,7 @@ export class Gui {
         });
         this.gui.add(this.settings.effectController, 'minDistance', 10, 300).name('Min Distance');
         this.gui.add(this.settings.effectController, 'maxConnections', 0, 30, 1).name('Max Connections');
-        this.gui.add(this.settings.effectController, 'particlesCount', 400, this.settings.sceneSettings.maxParticlesCount, 1).name('Particles Count').onChange((value) => {
-            this.settings.sceneSettings.particlesCount = value;
+        this.gui.add(this.settings.sceneSettings, 'particlesCount', 400, this.settings.sceneSettings.maxParticlesCount, 1).name('Particles Count').onChange(() => {
             this.particles.updateParticles();
         });
         this.gui.add(this.settings.effectController, 'particleVelocity', 0, 2, 0.01).name('Particle Speed').onChange(() => {
@@ -61,6 +60,6 @@ export class Gui {
     }
 
     addExportButton() {
-        this.gui.add({ exportSettings: () => this.exportSettings(this.settings) }, 'exportSettings').name('Export Settings');
+        this.gui.add({exportSettings: () => this.exportSettings(this.settings)}, 'exportSettings').name('Export Settings');
     }
 }
