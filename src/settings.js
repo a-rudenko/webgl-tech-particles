@@ -1,5 +1,5 @@
-export async function loadSettings(customSettingsPath) {
-    const path = customSettingsPath || './settings.json';
+export async function loadSettings(settingsPath) {
+    const path = settingsPath || './settings.json';
     const response = await fetch(path);
     if (!response.ok) {
         throw new Error(`Failed to load settings from ${path}`);

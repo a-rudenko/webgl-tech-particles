@@ -5,8 +5,8 @@ import {loadTextures} from './texture.js';
 import {loadSettings} from './settings.js';
 import './assets/css/main.css';
 
-export async function initWebGLTechParticles(containerId, customSettingsPath, iconFolderPath ) {
-    const settings = await loadSettings(customSettingsPath);
+export async function initWebGLTechParticles(containerId, settingsPath, iconFolderPath ) {
+    const settings = await loadSettings(settingsPath);
     const textures = await loadTextures(iconFolderPath);
     const scene = new Scene(settings, containerId);
     const particles = new Particles(scene, settings, textures);
