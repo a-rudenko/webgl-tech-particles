@@ -33,5 +33,6 @@
     "iconSize": 20,
     "particlesCount": 500,
     "maxParticlesCount": 1000
-  }
+  },
+  "iconFolderPath": ""
 }
