@@ -51,8 +51,8 @@ module.exports = {
     plugins: [
         new CopyWebpackPlugin({
             patterns: [
-                { from: 'settings.json', to: 'settings.json' },
-                { from: 'src/assets/icons', to: 'assets/icons' },
+                {from: 'settings.json', to: 'settings.json'},
+                {from: 'src/assets/icons', to: 'assets/icons'},
             ],
         }),
     ],

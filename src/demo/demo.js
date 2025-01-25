@@ -1,9 +1,9 @@
-import { Scene } from '../scene.js';
-import { Particles } from '../particles.js';
-import { Renderer } from '../renderer.js';
-import { Gui } from '../gui.js';
-import { loadTextures } from '../texture.js';
-import { loadSettings, exportSettings } from '../settings.js';
+import {Scene} from '../scene.js';
+import {Particles} from '../particles.js';
+import {Renderer} from '../renderer.js';
+import {Gui} from '../gui.js';
+import {loadTextures} from '../texture.js';
+import {loadSettings, exportSettings} from '../settings.js';
 import '../assets/css/main.css';
 
 export async function initWebGLTechParticles(containerId) {

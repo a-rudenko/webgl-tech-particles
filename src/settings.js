@@ -4,6 +4,7 @@ export async function loadSettings(settingsPath) {
     if (!response.ok) {
         throw new Error(`Failed to load settings from ${path}`);
     }
+
     return await response.json();
 }
 

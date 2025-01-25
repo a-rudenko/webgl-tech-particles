@@ -5,7 +5,7 @@ export class Renderer {
         this.scene = scene;
         this.particles = particles;
         this.containerId = containerId;
-        this.renderer = new THREE.WebGLRenderer({ antialias: true });
+        this.renderer = new THREE.WebGLRenderer({antialias: true});
     }
 
     init() {
