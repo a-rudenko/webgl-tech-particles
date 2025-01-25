@@ -1,10 +1,33 @@
 <h1 align="center">WebGL Tech Particles</h1>
 
+<div align="center">
+  <a href="https://github.com/a-rudenko/webgl-tech-particles/blob/main/LICENSE" target="_blank" style="text-decoration: none;">
+    <img src="https://img.shields.io/github/license/a-rudenko/webgl-tech-particles" alt="GitHub license" >
+  </a>
+  <a href="https://www.npmjs.com/package/webgl-tech-particles" target="_blank" style="text-decoration: none;">
+    <img src="https://img.shields.io/npm/v/webgl-tech-particles" alt="Latest version">
+  </a>
+  <a href="https://www.npmjs.com/package/webgl-tech-particles" target="_blank" style="text-decoration: none;">
+    <img src="https://img.shields.io/bundlephobia/min/webgl-tech-particles" alt="Minified size">
+  </a>
+  <a href="https://www.npmjs.com/package/webgl-tech-particles" target="_blank" style="text-decoration: none;">
+    <img src="https://img.shields.io/npm/dw/webgl-tech-particles" alt="npm" >
+  </a>
+</div>
+
 Interactive 3D particle system with technology icons using WebGL and Three.js.
 
 This project is an interactive 3D visualization of technology icons (e.g., JavaScript, Python, React, Docker, etc.)
 implemented with WebGL and Three.js. Particles representing different technologies move dynamically in a 3D space,
 connecting with each other based on customizable parameters.
+
+<h2>Install</h2>
+
+Using npm:
+
+```bash
+$ npm i animal-avatar-generator
+```
 
 <h2>Usage</h2>
 
@@ -44,6 +67,19 @@ Example of `iconList.json`:
 ```
 
 <i>For correct operation, it is better to upload small icons in png and webp formats.</i>
+
+<h2>CDN Usage</h2>
+
+You can also use this package directly in the browser via CDN without installing it via npm. To do this, include the following script tag in your HTML file:
+
+```html
+<script type="module">
+  import { initWebGLTechParticles } from 'https://cdn.jsdelivr.net/npm/webgl-tech-particles@:vesrion/dist/webgl-tech-particles.js';
+  initWebGLTechParticles('tech-particles', 'settings.json');
+</script>
+```
+
+<i>Replace `:vesrion` with the version you need</i>
 
 <h2>Settings</h2>
 
@@ -93,4 +129,6 @@ Below is a description of the settings.
 
 <h2>Credits</h2>
 It is mainly developed using the JavaScript 3D library <a href="https://github.com/mrdoob/three.js">three.js</a>.
-    
+
+<h2>License</h2>
+<a href="https://github.com/a-rudenko/webgl-tech-particles/blob/main/LICENSE">MIT</a>

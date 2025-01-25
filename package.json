@@ -1,6 +1,6 @@
 {
   "name": "webgl-tech-particles",
-  "version": "0.0.8",
+  "version": "1.0.0",
   "description": "Interactive 3D particle system with technology icons using WebGL",
   "main": "dist/webgl-tech-particles.js",
   "module": "dist/webgl-tech-particles.js",
@@ -13,10 +13,12 @@
     "prepare": "npm run build"
   },
   "keywords": [
-    "WebGL",
-    "particle",
+    "webgl",
+    "particles",
     "technology",
-    "javascript"
+    "javascript",
+    "three.js",
+    "3d"
   ],
   "author": {
     "name": "Aleksey Rudenko",
