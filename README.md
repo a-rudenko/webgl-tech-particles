@@ -13,6 +13,7 @@
   <a href="https://www.npmjs.com/package/webgl-tech-particles">
     <img src="https://img.shields.io/npm/dw/webgl-tech-particles" alt="npm" >
   </a>
+<img src="https://github.com/a-rudenko/webgl-tech-particles/actions/workflows/deploy.yml/badge.svg" alt="deploy demo" >
 </div>
 
 Interactive 3D particle system with technology icons using WebGL and Three.js.
