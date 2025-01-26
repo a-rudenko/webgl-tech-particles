@@ -26,7 +26,7 @@ const DEFAULT_ICONS = [
     'open-ai.webp',
 ];
 
-const DEFAULT_ICON_FOLDER = './dist/assets/icons';
+const DEFAULT_ICON_FOLDER = ICON_FOLDER;
 
 const loadTexture = (textureLoader, path) => {
     return new Promise((resolve) => {

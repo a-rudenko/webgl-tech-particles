@@ -1,16 +1,16 @@
 <h1 align="center">WebGL Tech Particles</h1>
 
 <div align="center">
-  <a href="https://github.com/a-rudenko/webgl-tech-particles/blob/main/LICENSE" target="_blank" style="text-decoration: none;">
+  <a href="https://github.com/a-rudenko/webgl-tech-particles/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/a-rudenko/webgl-tech-particles" alt="GitHub license" >
   </a>
-  <a href="https://www.npmjs.com/package/webgl-tech-particles" target="_blank" style="text-decoration: none;">
+  <a href="https://www.npmjs.com/package/webgl-tech-particles">
     <img src="https://img.shields.io/npm/v/webgl-tech-particles" alt="Latest version">
   </a>
-  <a href="https://www.npmjs.com/package/webgl-tech-particles" target="_blank" style="text-decoration: none;">
+  <a href="https://www.npmjs.com/package/webgl-tech-particles">
     <img src="https://img.shields.io/bundlephobia/min/webgl-tech-particles" alt="Minified size">
   </a>
-  <a href="https://www.npmjs.com/package/webgl-tech-particles" target="_blank" style="text-decoration: none;">
+  <a href="https://www.npmjs.com/package/webgl-tech-particles">
     <img src="https://img.shields.io/npm/dw/webgl-tech-particles" alt="npm" >
   </a>
 </div>
@@ -20,6 +20,8 @@ Interactive 3D particle system with technology icons using WebGL and Three.js.
 This project is an interactive 3D visualization of technology icons (e.g., JavaScript, Python, React, Docker, etc.)
 implemented with WebGL and Three.js. Particles representing different technologies move dynamically in a 3D space,
 connecting with each other based on customizable parameters.
+
+<a href="https://a-rudenko.github.io/webgl-tech-particles/demo.html">Live demo</a>
 
 <h2>Install</h2>
 
@@ -83,8 +85,10 @@ You can also use this package directly in the browser via CDN without installing
 
 <h2>Settings</h2>
 
-Example with basic <a href="https://github.com/a-rudenko/webgl-tech-particles/blob/main/settings.json" target="_blank">
+Example with basic <a href="https://github.com/a-rudenko/webgl-tech-particles/blob/main/settings.json">
 settings</a>.
+
+<i>You can also export settings from the <a href="https://a-rudenko.github.io/webgl-tech-particles/demo.html">demo</a> version.</i>
 
 Below is a description of the settings.
 
