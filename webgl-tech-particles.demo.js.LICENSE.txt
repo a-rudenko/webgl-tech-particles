@@ -1,0 +1,15 @@
+/*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */
+
+/**
+ * @license
+ * Copyright 2010-2024 Three.js Authors
+ * SPDX-License-Identifier: MIT
+ */
+
+/**
+ * lil-gui
+ * https://lil-gui.georgealways.com
+ * @version 0.17.0
+ * @author George Michael Brower
+ * @license MIT
+ */
