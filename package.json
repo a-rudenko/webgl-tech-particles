@@ -1,6 +1,6 @@
 {
   "name": "webgl-tech-particles",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Interactive 3D particle system with technology icons using WebGL",
   "main": "dist/webgl-tech-particles.js",
   "module": "dist/webgl-tech-particles.js",
@@ -37,10 +37,9 @@
     "terser-webpack-plugin": "^5.3.11",
     "webpack": "^5.97.0",
     "webpack-cli": "^6.0.0",
-    "webpack-dev-server": "^5.2.0"
+    "lil-gui": "^0.20.0"
   },
   "dependencies": {
-    "lil-gui": "^0.20.0",
     "three": "^0.172.0"
   }
 }
