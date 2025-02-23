@@ -29,7 +29,7 @@ connecting with each other based on customizable parameters.
 Using npm:
 
 ```bash
-$ npm i animal-avatar-generator
+npm i animal-avatar-generator
 ```
 
 <h2>Usage</h2>
