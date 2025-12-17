@@ -1,6 +1,6 @@
 {
   "name": "webgl-tech-particles",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Interactive 3D particle system with technology icons using WebGL",
   "main": "dist/webgl-tech-particles.js",
   "module": "dist/webgl-tech-particles.js",
@@ -47,6 +47,6 @@
     "lil-gui": "^0.21.0"
   },
   "dependencies": {
-    "three": "^0.181.2"
+    "three": "^0.182.0"
   }
 }
