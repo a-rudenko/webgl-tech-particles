@@ -8,9 +8,6 @@
     <img src="https://img.shields.io/npm/v/webgl-tech-particles" alt="Latest version">
   </a>
   <a href="https://www.npmjs.com/package/webgl-tech-particles">
-    <img src="https://img.shields.io/bundlephobia/min/webgl-tech-particles" alt="Minified size">
-  </a>
-  <a href="https://www.npmjs.com/package/webgl-tech-particles">
     <img src="https://img.shields.io/npm/dw/webgl-tech-particles" alt="npm" >
   </a>
 <img src="https://github.com/a-rudenko/webgl-tech-particles/actions/workflows/deploy.yml/badge.svg" alt="deploy demo" >
