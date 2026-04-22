@@ -74,12 +74,12 @@ You can also use this package directly in the browser via CDN without installing
 
 ```html
 <script type="module">
-  import { initWebGLTechParticles } from 'https://cdn.jsdelivr.net/npm/webgl-tech-particles@:vesrion/dist/webgl-tech-particles.js';
+  import { initWebGLTechParticles } from 'https://cdn.jsdelivr.net/npm/webgl-tech-particles@:version/dist/webgl-tech-particles.js';
   initWebGLTechParticles('tech-particles', 'settings.json');
 </script>
 ```
 
-<i>Replace `:vesrion` with the version you need</i>
+<i>Replace `:version` with the version you need</i>
 
 <h2>Settings</h2>
 
